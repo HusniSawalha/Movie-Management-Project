@@ -8,10 +8,9 @@ const r = readline.createInterface({
     output: process.stdout,
 });
 
-const menu = '###################################### \nWELCOME TO MOVIE MANAGER \n###################################### \n 1. Add Movie \n 2. Search For Movie \n 3. Update Movie \n 4. Get Movies From Online Database \n 5. Show All Movies \n 6. End Program \n###################################### \n'
-
 function start() {
-    console.log(menu);
+    fH.jsonToArray();
+    console.log('###################################### \nWELCOME TO MOVIE MANAGER \n###################################### \n 1. Add Movie \n 2. Search For Movie \n 3. Update Movie \n 4. Get Movies From Online Database \n 5. Show All Movies \n 6. End Program \n###################################### \n');
     r.question("What do you want to do? ", (ans) => {
         switch (ans) {
         case "1":
@@ -27,20 +26,6 @@ function start() {
             });            
             break;
         case "2":
-            r.question("Search By: \n1. Title \n2. Director \n3. Year Released \n 4. Genre \n", s => {
-                if (s == 1 ) {
-                    r.question("What is the title of the movie? ", search=>{
-                        fH.searchByTitle(search);
-                    })
-                    
-                } else if (s==2){
-                    mMng.searchMovieByDirector(s);
-                } else if (s==3){
-                    mMng.searchMovieByYear(s);
-                } else if (s==4){
-                    mMng.searchMovieByGenre(s);
-                }
-            });
             break;
         case "3":
             break;
@@ -53,6 +38,7 @@ function start() {
                 start();
             break;
         case "6":
+            console.log("Closing Program...");
             r.close();
             break;
         };

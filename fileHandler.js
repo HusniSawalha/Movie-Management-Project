@@ -1,23 +1,21 @@
 const fs = require("fs");
-let data = [];
+
 function readFromMoviesFile() {
   fs.readFile("movies.json", "utf-8", (err, data) => {
-        if (err) {
-            console.log("Error Reading The File!");
-        } else {
-            console.log("\n############\nResult\n");
-            console.log(data);
-            console.log("\n############\n");
-        }
-    });
+    if (err) {
+      console.log("Error!");
+    } else {
+      console.log(data);
+    }
+  });
 }
 
 function writeOnMoviesFile(data) {
-  fs.writeFile("movies.json", JSON.stringify(data), (err) => {
+  fs.appendFile("movies.json", JSON.stringify(data), (err) => {
     if (err) {
       console.log("Error Writing On File!");
     } else {
-        console.log("\nDone!\n")
+      console.log("\nDone!\n");
     }
   });
 }

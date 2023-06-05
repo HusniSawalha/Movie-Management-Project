@@ -1,5 +1,4 @@
 const fH = require("./fileHandler");
-var allMovies = [];
 class Movies {
   constructor(title, year, director, genre) {
     this.title = title;
@@ -11,28 +10,11 @@ class Movies {
 
 function addMovie(title, year, director, genre) {
   var movie = new Movies(title, year, director, genre);
-  allMovies.push(movie)
-  fH.writeOnMoviesFile(allMovies);
+  fH.writeOnMoviesFile(movie);
 }
 
-function searchMovieByTitle(search){
-    console.log(Movies.filter((task) => task.completed === completed));
-}
-function searchMovieByDirector(search){
-
-}
-function searchMovieByYear(search){
-
-}
-function searchMovieByGenre(search){
-
-}
 
 
 module.exports = {
     addMovie,
-    searchMovieByTitle,
-    searchMovieByDirector,
-    searchMovieByYear,
-    searchMovieByGenre,
 }

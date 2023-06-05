@@ -1,1 +1,20 @@
-[{"title":"q","year":"q","director":"q","genre":"q"},{"title":"w","year":"w","director":"w","genre":"w"}]
+[
+    {
+      "title": "Movie 1",
+      "year": 2021,
+      "director": "Director 1",
+      "genre": "Genre 1"
+    },
+    {
+      "title": "Movie 2",
+      "year": 2022,
+      "director": "Director 2",
+      "genre": "Genre 2"
+    },
+    {
+      "title": "Movie 3",
+      "year": 2023,
+      "director": "Director 3",
+      "genre": "Genre 3"
+    }
+  ]
